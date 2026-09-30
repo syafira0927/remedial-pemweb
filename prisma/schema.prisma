@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // <-- Diubah dari sqlite ke postgresql
+  url      = env("DATABASE_URL")
+}
+
+model Produk {
+  id       String @id @default(uuid())
+  nama     String
+  kategori String
+  harga    Int
+  stok     Int
+  gambar   String
+}
